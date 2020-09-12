@@ -1,0 +1,60 @@
+ at the beggining of main, we are examining the global varible 'GlobalVar', the varible's type is an integer 
+ the value stored is 1 
+ the memory address is 0x5609d0176048 
+  ========================================================================================= 
+ at the beggining of main, we are examining the global -constant- varible 'GlobalConst', the varible's type is an integer 
+ the value stored is 0 
+ the memory address is 0x5609cff74bc8 
+  ========================================================================================= 
+ at the beggining of main, - right after declaring the local varible - 'mainVar', the varible's type is an integer 
+ the value stored is 8 
+ the memory address is 0x7ffcfdac9d2c 
+  ========================================================================================= 
+ at the beggining of main, - right after declaring the local constant varible - 'mainConst', the varible's type is an integer 
+ the value stored is 9 
+ the memory address is 0x7ffcfdac9d28 
+  ========================================================================================= 
+ at the beggining of main, - right before calling function f - which takes the argument count as a parameter, we are examing the argument count 'args', the varible's type is an integer 
+ the value stored is 1 
+ the memory address is 0x7ffcfdac9d1c 
+  ========================================================================================= 
+inside the f function, at the very begining, before doing anything, we are examing the argument count 'args', which was passed to the function as a param, the varible's type is an integer 
+ the value stored is 1 
+ the memory address is 0x7ffcfdac9cdc 
+  ========================================================================================= 
+inside the f function, after declaring the -static varible - 'staticVar', the varible's type is an integer 
+ the value stored is 2 
+ the memory address is 0x5609d017604c 
+  ========================================================================================= 
+inside the f function, after declaring the -local varible - 'localVar', the varible's type is an integer 
+ the value stored is 3 
+ the memory address is 0x7ffcfdac9cf4 
+  ========================================================================================= 
+inside the f function, after declaring the -local constant varible - 'localConst', the varible's type is an integer 
+ the value stored is 4 
+ the memory address is 0x7ffcfdac9cf0 
+  ========================================================================================= 
+inside the f function, inside the for loop, after declaring the -loop varible (counter) - 'loopVar', the varible's type is an integer 
+ the value stored is 5 
+ the memory address is 0x7ffcfdac9cec 
+  ========================================================================================= 
+inside the f function, inside the for loop, after declaring the -loop's constant varible - 'loopConst', the varible's type is an integer 
+ the value stored is 6 
+ the memory address is 0x7ffcfdac9ce8 
+  ========================================================================================= 
+inside the f function, after declaring the -pointer - 'ptr', the varible's type is a pointer to an integer 
+ the value stored is 0 
+ the memory address is 0x5609d085f010 
+  ========================================================================================= 
+inside the f function, inside the if statment, we are TRYING TO  ALTER the -pointer - 'ptr', the varible's type is a pointer to an integer 
+ the value stored is 7 
+ the memory address is 0x5609d085f010 
+  ========================================================================================= 
+inside the f function, AFTER FREEING the -pointer - 'ptr', the varible's type is a pointer to an integer 
+ the value stored is 0 
+ the memory address is 0x5609d085f010 
+  ========================================================================================= 
+ in main, - right after calling function f - which takes the argument count as a parameter, we are examing the argument count 'args', the varible's type is an integer 
+ the value stored is 1 
+ the memory address is 0x7ffcfdac9d1c 
+  ========================================================================================= 

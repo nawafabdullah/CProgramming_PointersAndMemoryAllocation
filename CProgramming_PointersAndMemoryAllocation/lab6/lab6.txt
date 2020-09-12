@@ -1,0 +1,31 @@
+- At the beginning of main, we examined the global variable ‘GlobalVar’. As a global variable, GlobalVar should exist in the stake frame kept for global variables. So I examined the second global variable ‘GlobalConst’, and I noticed thatthe memory addresses of both are very similar. In fact, the first 8 bits of the address are identical. This lead me to conclude, that both global variables are stored close to each other in memory. Thus, they exist in the same stack frame. Also the same values stored in the global variables remained the same throughout the run of the program, and the addresses never changed
+
+
+- Inside the main function, we started declaring some local variables, For example, variable ’mainVar’ which we initialized with value of 8. We also declared variables ‘mainConst’ which we gave the value of 9. The two variables also had similar addresses. In fact, the first 13 bits of the address we identical. Which matches our expectations since we assume that local variables defined inside a function should be stored in the stack frame for the current function. 
+
+- Inside of main, another variable was declared when main was essentially called, and that is the arguments count ‘args’. This variable will have different values based on the run of the program. However, what is to notice here is that ‘args’ was stored close to ‘mainConst’ and ‘mainVar’. In fact, they have the same first 12 bits. So we can see that it is stored in the same stack frame that is used for the function’s locals  
+
+
+THEN WE CALLED FUNCTION F AND PASSED IT ‘argc’ 
+
+- Inside of f, before doing anything, we again examined the variable ‘args’ which was passed to the function as a parameter. I noticed that the value stored remained the same. However, the address changed. In fact the new address ‘args’ has is the same as every local variable that was declared inside the f function
+
+- Inside the function f, we declared a static variable ‘staticVar’. staticVar was initialized with value 2. What to note here is that staticVar was stored in a completely different memory address than the rest of the variables that were declared inside of the function f. This makes sense since we declared the variable ‘statically’. This means that staticVar gets its memory address at compilation time NOT at runtime
+
+- We then declared few variables inside the function f, and nothing interesting happened. All variables held their values throughout, and they all had similar addresses compared to all local variables created inside the function f, even the variables declared inside the for loop had similar addresses. 
+
+- The next interesting thing that happened inside the function f, was when we initialized the pointer ‘ptr’ with malloc. Initially the value stored in the pointer was 0. But the address was completely different than any local varible declared inside of f. This is to be expected since the pointer that was initialized using malloc is allocated -dynamically-. Meaning that the addresses are allocated at run time and they exist in the heap
+
+
+- Then we tried to alter the pointer, but it still held the same address it was initialized with. However, the value stored in ‘ptr’ was changed to 7. 
+
+- We then freed ‘ptr’ and the value stored was resetted to 0. Note: ‘ptr’ still held the same address after freeing it 
+
+
+
+
+
+ 
+
+
+ 

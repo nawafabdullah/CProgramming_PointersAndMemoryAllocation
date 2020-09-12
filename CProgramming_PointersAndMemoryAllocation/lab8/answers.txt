@@ -1,0 +1,27 @@
+//Noah Alharbi
+//Lab8
+//CSCI330
+
+- Lab8a
+At the begging of the program, in main, we initialize the variables x and y with values 10 and 100 respectively. We then initialized the variable z with a value = x++ * ++y. In the end of main, we printed the values for x, y, and z. 
+x and y returned 11 and 101 respectively, and that is to be expected since we incremented both values by 1 with the ++ operator when we initialized z. The variable z, however, returned 1010, which is the result of multiplying 10 * 101. It is important to note here that a programmer would expect the result to be 1111, since this is the result of multiplying 11 times 101 (the results of incrementing x by 1 and y by 1). However, we incremented the variable x with the ++ operator as a postfix, i.e x++. In this case, x will definitely increment by 1, but it will return, first, the actual value stored in x, i.e 10, then it will increment after. In the case of variable y, we incremented the value stored in y by using the ++ operator as a prefix, i.e, ++y. In this case, the first returned value will be the result of incrementing y by one, i.e 101. Thus, giving us the value 10 * 101 =  1010, and store this resulted value in z. 
+Note: using the ++ operator as a prefix or a postfix will definitely increment the value by one. However, the ‘first’ returned value will differ. 
+
+
+- Lab8b 
+At the begging of the program, in main, we initialize the variables x and y with values 10 and 100 respectively. We then initialized the variable z with a value = (x++,x) * (++y,y). Note here how the increment is happening between brackets and with a comma between the variables. This is the use of the ‘comma operator’. The comma operator evaluates the first expression and then returns only the second expression. After running the program the output returned was 
+x 11, y 101, z 1111.
+
+Note that this time z returned 1111 which is the result of multiplying 11 * 101. Which means that this time the increment happened for both variables before the multiplication applied, although we used the same incrementing methods as lab8a. The reason is that in this peace of code (x++,x), the comma operator evaluated the x++, first, then returned the value of the new x (,x) , and the same applies for y. Thus, giving us the value 11 * 101 =  1111, and store this resulted value in z. 
+
+
+
+- Lab8c
+After running the program, The output returned was as follows: 
+ x 2, y 11, z 200, r 33000
+In the code block in lab8c.c, in main, we initialized the variables x with value 1, y with value 10, z with the value 100.  Outside of main, we have 2 functions, and I will discuss both of them as this as I evaluate the expression 
+r = p(x++, ++y, f(&z), z/y);
+Note that we called function p and passed it the following parameters: x++, ++y, f(&z), z/y. Function p multiplies the parameters and return the result of the multiplication. The first parameter passed was x++, and from lab8a, we know that this will pass the value 1, and it will increment after the evaluation. Similarly, we know from lab8a that y will pass 11, i.e, it will increment then it will return the new value. The next parameter passed was f(&z), function f here receives the reference of z, and the function then takes the value, and multiply it by 2, hence (*a) *= 2; // this means take the value pointer a is pointing at, and multiply it by 2. I.e, *a = 2 * *a
+The function f then returns the expression return (3 * (*a)) / 2; 
+The previous expression multiplies 3 times the new value a is pointing at. I.e, 200 then divide the result by 2. Thus, (3*200) /2 => 600/2 = 300. This will make the returned value of the third parameter p(&z) = 300 
+The fourth parameter that was passed to function p is z/y = 100/10 = 10; The reason that in the previous expression the variables z and y maintained their initial values is because the compiler evaluated this part of the code before the other expressions. i.e right to left. Thus the values that were passed to function p are (1, 11, 300,10) then multiplies them all and return the result. I.e, 1*11*300*10 = 33000
